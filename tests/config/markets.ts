@@ -5,6 +5,7 @@ export const testDataForMarkets = {
     locators: {
       testid: {
         shopBtn: "headerItem-0",
+        testSKU: "ploom-x-advanced",
       },
       text: {},
     },
@@ -16,6 +17,7 @@ export const testDataForMarkets = {
     locators: {
       testid: {
         shopBtn: "headerItem-1",
+        testSKU: "16199177",
       },
       text: {},
     },
