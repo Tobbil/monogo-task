@@ -1,17 +1,20 @@
 import { Page, Locator } from "@playwright/test";
+import { LocaleTestData } from "../config/locales";
 import BasePage from "./BasePage";
 
 export default class Cart extends BasePage {
   readonly page: Page;
+  readonly locale: string;
   readonly cartIcon: Locator;
   readonly cartContainer: Locator;
   readonly cartItems: Locator;
   readonly decreaseQuantityBtn: Locator;
   readonly cartItemCountHeader: Locator;
 
-  constructor(page: Page) {
-    super(page);
+  constructor(page: Page, locale: string, testData: LocaleTestData) {
+    super(page, locale, testData);
     this.page = page;
+    this.locale = locale;
     this.cartIcon = this.page.getByTestId("cart");
     this.cartContainer = this.page.locator(".mini-cart__container");
     this.cartItems = this.page.getByTestId("mini-cart-list");
