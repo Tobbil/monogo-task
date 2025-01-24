@@ -10,7 +10,6 @@ test.describe("Ploom tests for Monogo", () => {
 
   test.beforeAll(async ({}, testInfo) => {
     locale = testInfo.project.name.split("-")[0] || "en";
-    console.log(locale);
   });
 
   test.beforeEach(async ({ page }) => {
