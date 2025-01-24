@@ -1,6 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
+import * as dotenv from "dotenv";
 
-const baseURL = "https://www.ploom.co.uk/en";
+dotenv.config();
+
+// const baseURL = "https://www.ploom.co.uk/en";
 // const baseURL = "https://www.ploom.pl/pl";
 
 /**
@@ -29,7 +32,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: baseURL,
+    // baseURL: baseURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
@@ -40,10 +43,10 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
-    },
+    // {
+    //   name: "chromium",
+    //   use: { ...devices["Desktop Chrome"] },
+    // },
 
     // {
     //   name: 'firefox',
@@ -74,6 +77,36 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    /* Test against specific locales */
+    {
+      name: "en-chrome",
+      use: {
+        browserName: "chromium",
+        baseURL: "https://www.ploom.co.uk/en",
+      },
+    },
+    {
+      name: "en-firefox",
+      use: {
+        browserName: "firefox",
+        baseURL: "https://www.ploom.co.uk/en",
+      },
+    },
+    {
+      name: "pl-chrome",
+      use: {
+        browserName: "chromium",
+        baseURL: "https://www.ploom.pl/pl",
+      },
+    },
+    {
+      name: "pl-firefox",
+      use: {
+        browserName: "firefox",
+        baseURL: "https://www.ploom.pl/pl",
+      },
+    },
   ],
 
   /* Run your local dev server before starting the tests */
@@ -83,5 +116,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
-export { baseURL };

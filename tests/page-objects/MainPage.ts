@@ -1,21 +1,22 @@
 import { Page, Locator } from "@playwright/test";
-import { baseURL } from "../../playwright.config";
-import { testDataForMarkets as testData } from "../config/markets";
+import { LocaleTestData } from "../config/locales";
 import BasePage from "./BasePage";
 
 export default class MainPage extends BasePage {
   readonly page: Page;
+  readonly locale: string;
   readonly shopBtn: Locator;
   readonly acceptCookiesBtn: Locator;
   readonly confirmAgeBtn: Locator;
   readonly addToCartBtn: Locator;
   readonly cartIcon: Locator;
 
-  constructor(page: Page) {
-    super(page);
+  constructor(page: Page, locale: string, testData: LocaleTestData) {
+    super(page, locale, testData);
     this.page = page;
+    this.locale = locale;
     this.shopBtn = this.page.getByTestId(
-      testData[baseURL].locators.testid.shopBtn
+      this.testData[locale].locators.testid.shopBtn
     );
     this.acceptCookiesBtn = this.page.locator("#onetrust-accept-btn-handler");
     this.confirmAgeBtn = this.page

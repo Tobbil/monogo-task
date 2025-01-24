@@ -1,12 +1,15 @@
 import { Page } from "@playwright/test";
+import { LocaleTestData } from "../config/locales";
 
 export default class BasePage {
   readonly page: Page;
   readonly url: string;
+  readonly testData: LocaleTestData;
 
-  constructor(page: Page) {
+  constructor(page: Page, locale: string, testData: LocaleTestData) {
     this.page = page;
-    this.url = "/";
+    this.testData = testData;
+    this.url = testData[locale].baseURL || testData["en"].baseURL;
   }
 
   async goto() {
