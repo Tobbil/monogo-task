@@ -1,8 +1,36 @@
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices, Project } from "@playwright/test";
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
+interface ProjectConfig {
+  name: string;
+  browser: "chromium" | "firefox" | "webkit";
+  baseURL: string;
+}
+
+export const projects: ProjectConfig[] = [
+  {
+    name: "en-chrome",
+    browser: "chromium",
+    baseURL: "https://www.ploom.co.uk/en",
+  },
+  {
+    name: "en-firefox",
+    browser: "firefox",
+    baseURL: "https://www.ploom.co.uk/en",
+  },
+  {
+    name: "pl-chrome",
+    browser: "chromium",
+    baseURL: "https://www.ploom.pl/pl",
+  },
+  {
+    name: "pl-firefox",
+    browser: "firefox",
+    baseURL: "https://www.ploom.pl/pl",
+  },
+];
 // const baseURL = "https://www.ploom.co.uk/en";
 // const baseURL = "https://www.ploom.pl/pl";
 
@@ -40,74 +68,53 @@ export default defineConfig({
   expect: {
     timeout: 10000, // Sets default assertion timeout to 10 seconds
   },
+  globalSetup: "./global-setup.ts",
 
   /* Configure projects for major browsers */
-  projects: [
-    // {
-    //   name: "chromium",
-    //   use: { ...devices["Desktop Chrome"] },
-    // },
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
-
-    /* Test against specific locales */
-    {
-      name: "en-chrome",
-      use: {
-        browserName: "chromium",
-        baseURL: "https://www.ploom.co.uk/en",
-      },
+  projects: projects.map(({ name, browser, baseURL }) => ({
+    name,
+    use: {
+      browserName: browser,
+      baseURL: baseURL,
+      storageState: `./storageStates/${name}.json`,
     },
-    {
-      name: "en-firefox",
-      use: {
-        browserName: "firefox",
-        baseURL: "https://www.ploom.co.uk/en",
-      },
-    },
-    {
-      name: "pl-chrome",
-      use: {
-        browserName: "chromium",
-        baseURL: "https://www.ploom.pl/pl",
-      },
-    },
-    {
-      name: "pl-firefox",
-      use: {
-        browserName: "firefox",
-        baseURL: "https://www.ploom.pl/pl",
-      },
-    },
-  ],
+  })),
+  // {
+  //   name: "chromium",
+  //   use: { ...devices["Desktop Chrome"] },
+  // },
+
+  // {
+  //   name: 'firefox',
+  //   use: { ...devices['Desktop Firefox'] },
+  // },
+
+  // {
+  //   name: 'webkit',
+  //   use: { ...devices['Desktop Safari'] },
+  // },
+
+  /* Test against mobile viewports. */
+  // {
+  //   name: 'Mobile Chrome',
+  //   use: { ...devices['Pixel 5'] },
+  // },
+  // {
+  //   name: 'Mobile Safari',
+  //   use: { ...devices['iPhone 12'] },
+  // },
+
+  /* Test against branded browsers. */
+  // {
+  //   name: 'Microsoft Edge',
+  //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+  // },
+  // {
+  //   name: 'Google Chrome',
+  //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+  // },
+
+  /* Test against specific locales */
 
   /* Run your local dev server before starting the tests */
   // webServer: {

@@ -13,12 +13,8 @@ test.describe("Ploom tests for Monogo", () => {
   });
 
   test.beforeEach(async ({ page }) => {
-    // TODO: Accept cookies, confirm age and store state before ALL the tests
-    // TODO: Make sure storageState file exists before tests are run
     const mainPage = new MainPage(page, locale, testData);
     await mainPage.goto();
-    await mainPage.acceptCookiesBtn.click();
-    await mainPage.confirmAgeBtn.click();
   });
 
   test(`Verify if it's possible to add a product to the cart`, async ({
