@@ -1,17 +1,18 @@
 import { Page, Locator } from "@playwright/test";
-import { LocaleTestData } from "../config/locales";
 import BasePage from "./BasePage";
 
 export default class Cart extends BasePage {
   readonly cartIcon: Locator;
+  readonly cartIconCounter: Locator;
   readonly cartContainer: Locator;
   readonly cartItems: Locator;
   readonly decreaseQuantityBtn: Locator;
   readonly cartItemCountHeader: Locator;
 
-  constructor(page: Page, locale: keyof LocaleTestData, testData: LocaleTestData) {
-    super(page, locale, testData);
+  constructor(page: Page) {
+    super(page);
     this.cartIcon = this.page.getByTestId("cart");
+    this.cartIconCounter = this.page.locator(".mini-cart__icon-label");
     this.cartContainer = this.page.locator(".mini-cart__container");
     this.cartItems = this.page.getByTestId("mini-cart-list");
     this.decreaseQuantityBtn = this.page.getByTestId("quantityMinus");
@@ -19,20 +20,11 @@ export default class Cart extends BasePage {
   }
 
   async getCartIconCount() {
-    return Number(
-      await this.cartIcon.locator(".mini-cart__icon-label").innerText()
-    );
+    return Number(await this.cartIcon.locator(".mini-cart__icon-label").innerText());
   }
 
   getNthItemName(n: number) {
-    return this.cartItems
-      .locator(".ProductMiniature-module-productName-JRifI")
-      .nth(n);
-  }
-
-  async getItemCountFromHeader() {
-    const itemCountString = await this.cartItemCountHeader.innerText();
-    return Number(itemCountString.split(" ")[0]);
+    return this.cartItems.locator(".ProductMiniature-module-productName-JRifI").nth(n);
   }
 
   async decreaseNthItemQuantity(n: number) {
