@@ -6,7 +6,12 @@ import ProductPage from "../page-objects/ProductPage";
 import Cart from "../page-objects/Cart";
 
 export const test = base.extend({
-  itemInCart: async ({ page }, use, testInfo) => {
+  itemInCart: async ({ browser }, use, testInfo) => {
+    const context = await browser.newContext({
+      storageState: `./storageStates/${testInfo.project.name}.json`,
+    });
+
+    const page = await context.newPage();
     const locale: string = testInfo.project.name.split("-")[0] || "en";
     const mainPage = new MainPage(page, locale, testData);
     const productPage = new ProductPage(page, locale, testData);

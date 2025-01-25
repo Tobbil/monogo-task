@@ -9,7 +9,11 @@ export default class Cart extends BasePage {
   readonly decreaseQuantityBtn: Locator;
   readonly cartItemCountHeader: Locator;
 
-  constructor(page: Page, locale: keyof LocaleTestData, testData: LocaleTestData) {
+  constructor(
+    page: Page,
+    locale: keyof LocaleTestData,
+    testData: LocaleTestData
+  ) {
     super(page, locale, testData);
     this.cartIcon = this.page.getByTestId("cart");
     this.cartContainer = this.page.locator(".mini-cart__container");
@@ -28,11 +32,6 @@ export default class Cart extends BasePage {
     return this.cartItems
       .locator(".ProductMiniature-module-productName-JRifI")
       .nth(n);
-  }
-
-  async getItemCountFromHeader() {
-    const itemCountString = await this.cartItemCountHeader.innerText();
-    return Number(itemCountString.split(" ")[0]);
   }
 
   async decreaseNthItemQuantity(n: number) {

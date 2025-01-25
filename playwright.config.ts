@@ -11,7 +11,7 @@ interface ProjectConfig {
 
 export const projects: ProjectConfig[] = [
   {
-    name: "en-chrome",
+    name: "en-chromium",
     browser: "chromium",
     baseURL: "https://www.ploom.co.uk/en",
   },
@@ -21,7 +21,7 @@ export const projects: ProjectConfig[] = [
     baseURL: "https://www.ploom.co.uk/en",
   },
   {
-    name: "pl-chrome",
+    name: "pl-chromium",
     browser: "chromium",
     baseURL: "https://www.ploom.pl/pl",
   },

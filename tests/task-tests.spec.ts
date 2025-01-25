@@ -14,7 +14,14 @@ test.describe("Ploom tests for Monogo", () => {
 
   test.beforeEach(async ({ page }) => {
     const mainPage = new MainPage(page, locale, testData);
+    const cart = new Cart(page, locale, testData);
     await mainPage.goto();
+    await cart.cartIcon.click();
+    for (const button of await cart.decreaseQuantityBtn.all()) {
+      await button.click();
+    }
+    await expect(cart.cartItems).toHaveCount(0);
+    await cart.cartIcon.click();
   });
 
   test(`Verify if it's possible to add a product to the cart`, async ({
@@ -40,7 +47,7 @@ test.describe("Ploom tests for Monogo", () => {
   }) => {
     const { cart } = itemInCart;
     await expect(cart.cartItems).toHaveCount(1);
-    expect(await cart.getItemCountFromHeader()).toBe(1);
+    await expect(cart.cartItemCountHeader).toContainText("1");
     await cart.decreaseNthItemQuantity(0);
     await expect(cart.cartItems).toHaveCount(0);
     await expect(cart.cartItemCountHeader).toHaveText(
@@ -52,7 +59,6 @@ test.describe("Ploom tests for Monogo", () => {
     page,
     request,
   }) => {
-    test.setTimeout(45000);
     const mainPage = new MainPage(page, locale, testData);
 
     const linkErrors: string[] = [];

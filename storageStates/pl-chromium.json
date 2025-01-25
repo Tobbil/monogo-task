@@ -1,18 +1,8 @@
 {
   "cookies": [
     {
-      "name": "__td_signed",
-      "value": "true",
-      "domain": ".ploom.pl",
-      "path": "/",
-      "expires": 1772368096,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "BIGipServerpool_jtigcc",
-      "value": "e91019ac8d0483b582b0a35a362ada4f",
+      "value": "6d8a25bd761e6cd6532193bb9304df7c",
       "domain": "gcc.ploom.pl",
       "path": "/",
       "expires": -1,
@@ -22,7 +12,7 @@
     },
     {
       "name": "JSESSIONID",
-      "value": "1515614E8FB5DD151929442DE265A935",
+      "value": "A682737939B72252D2DECA564097117B",
       "domain": "gcc.ploom.pl",
       "path": "/",
       "expires": -1,
@@ -32,17 +22,17 @@
     },
     {
       "name": "glide_user_route",
-      "value": "glide.11f1c300ccc73142cfbd19af08c7bd83",
+      "value": "glide.087c2b3a89d21d1c35d606241417e0b2",
       "domain": "gcc.ploom.pl",
       "path": "/",
-      "expires": 1772368097,
+      "expires": 1772383532.756229,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "glide_node_id_for_js",
-      "value": "5753f3585fb6b4b3284df7e553c30c1ab27cdab1d2a445e5be3ecade361ea7de",
+      "value": "932ebee2945e7e74a50fa93bc31c6e1dc532a760494058a4e6c08dd9c716ce3e",
       "domain": "gcc.ploom.pl",
       "path": "/",
       "expires": -1,
@@ -61,54 +51,74 @@
       "sameSite": "None"
     },
     {
-      "name": "OptanonAlertBoxClosed",
-      "value": "2025-01-25T12:28:17.616Z",
+      "name": "BIGipServerpool_jtigcc",
+      "value": "6d8a25bd761e6cd6532193bb9304df7c",
+      "domain": "jtigcc.service-now.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__td_signed",
+      "value": "true",
       "domain": ".ploom.pl",
       "path": "/",
-      "expires": 1769344097,
+      "expires": 1772383532.90399,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "OptanonAlertBoxClosed",
+      "value": "2025-01-25T16:45:35.708Z",
+      "domain": ".ploom.pl",
+      "path": "/",
+      "expires": 1769359535,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "OptanonConsent",
-      "value": "isGpcEnabled=0&datestamp=Sat+Jan+25+2025+13%3A28%3A17+GMT%2B0100+(Central+European+Standard+Time)&version=202308.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=8e8bdee0-7f60-4e7b-8244-4a0010cc8c55&interactionCount=1&landingPath=NotLandingPage&groups=C0002%3A1%2CC0003%3A1%2CC0001%3A1",
+      "value": "isGpcEnabled=0&datestamp=Sat+Jan+25+2025+17%3A45%3A35+GMT%2B0100+(Central+European+Standard+Time)&version=202308.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=0e80c9e0-f55a-4835-8ee9-678c17cd4871&interactionCount=1&landingPath=NotLandingPage&groups=C0002%3A1%2CC0003%3A1%2CC0001%3A1",
       "domain": ".ploom.pl",
       "path": "/",
-      "expires": 1769344097,
+      "expires": 1769359535,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_td",
-      "value": "10f04b2a-d76f-4a65-bd8b-722d8b72da7b",
+      "value": "10456b40-04c9-48ae-9951-3c8ee22dbbd3",
       "domain": ".ploom.pl",
       "path": "/",
-      "expires": 1772368097,
+      "expires": 1772383535.854091,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_ga_GG4Y9PER3Q",
-      "value": "GS1.1.1737808097.1.0.1737808097.0.0.0",
+      "value": "GS1.1.1737823535.1.0.1737823535.0.0.0",
       "domain": ".ploom.pl",
       "path": "/",
-      "expires": 1771504097,
+      "expires": 1771519535,
       "httpOnly": false,
       "secure": false,
-      "sameSite": "None"
+      "sameSite": "Lax"
     },
     {
       "name": "_ga",
-      "value": "GA1.1.1397691526.1737808098",
+      "value": "GA1.1.944592599.1737823536",
       "domain": ".ploom.pl",
       "path": "/",
-      "expires": 1771504097,
+      "expires": 1771519535,
       "httpOnly": false,
       "secure": false,
-      "sameSite": "None"
+      "sameSite": "Lax"
     },
     {
       "name": "isAgeConfirmed",
@@ -118,27 +128,7 @@
       "expires": -1,
       "httpOnly": false,
       "secure": false,
-      "sameSite": "None"
-    },
-    {
-      "name": "BIGipServerpool_jtigcc",
-      "value": "4f4705e3e03912c6337cc38f5792005a",
-      "domain": "jtigcc.service-now.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "_td_global",
-      "value": "d5a48281-f7ca-4ba9-a450-fadc70c4ea90",
-      "domain": ".in.treasuredata.com",
-      "path": "/",
-      "expires": 1772368098,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
+      "sameSite": "Lax"
     }
   ],
   "origins": [
@@ -147,15 +137,15 @@
       "localStorage": [
         {
           "name": "NRBA_SESSION",
-          "value": "{\"value\":\"326dacf91913c448\",\"inactiveAt\":1737809898563,\"expiresAt\":1737822496823,\"updatedAt\":1737808098563,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":1,\"traceHarvestStarted\":true,\"serverTimeDiff\":-111,\"custom\":{}}"
+          "value": "{\"value\":\"0540cdd0443ff33f\",\"inactiveAt\":1737825336140,\"expiresAt\":1737837935827,\"updatedAt\":1737823536140,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":1,\"traceHarvestStarted\":true,\"serverTimeDiff\":-79,\"custom\":{}}"
+        },
+        {
+          "name": "main_website_store_anonymousCartId",
+          "value": "\"A3V2dU7uqF0TEC2hiuk5K2aCGmKkMKVt\""
         },
         {
           "name": "ec.last_nav_data",
           "value": "{\"portal\":\"23b08197874492505f2865340cbb35b0\",\"path\":\"https://gcc.ploom.pl/23b08197874492505f2865340cbb35b0\"}"
-        },
-        {
-          "name": "main_website_store_anonymousCartId",
-          "value": "\"HtD8Qo2TVZ6uHaBSRU5xGkzo9Yv1zLwL\""
         }
       ]
     },
@@ -164,7 +154,7 @@
       "localStorage": [
         {
           "name": "rc::a",
-          "value": "MWY0YnJ1cDFraGJoNmY="
+          "value": "dTZxMnNpYmR1bGhj"
         }
       ]
     },
@@ -172,32 +162,32 @@
       "origin": "https://gcc.ploom.pl",
       "localStorage": [
         {
-          "name": "sn.tabs.sn.$sp.activeTab",
-          "value": "26cfee026c389026c9b9026c3ab026c5"
-        },
-        {
-          "name": "tabKey",
-          "value": "4450.713845565787"
-        },
-        {
           "name": "EC_UNREAD_MSG",
           "value": "{\"Text\":\"\",\"Image\":\"\",\"Link\":\"\",\"File\":\"\",\"Html\":\"\",\"Other\":\"\",\"Unknown\":\"\"}"
-        },
-        {
-          "name": "EC_NOTIF_COUNT_MAP",
-          "value": "{\"total\":0,\"Chat\":0,\"Cases\":0,\"Walk-up\":0,\"Technician Visit\":0}"
-        },
-        {
-          "name": "EC_UNREAD_COUNT_MAP",
-          "value": "{\"total\":0,\"Text\":0,\"Image\":0,\"Link\":0,\"File\":0,\"Html\":0,\"Other\":0,\"Unknown\":0}"
         },
         {
           "name": "navigation",
           "value": "{\"navigationArr\":[]}"
         },
         {
+          "name": "tabKey",
+          "value": "839.6340436837457"
+        },
+        {
+          "name": "EC_UNREAD_COUNT_MAP",
+          "value": "{\"total\":0,\"Text\":0,\"Image\":0,\"Link\":0,\"File\":0,\"Html\":0,\"Other\":0,\"Unknown\":0}"
+        },
+        {
+          "name": "sn.tabs.sn.$sp.activeTab",
+          "value": "3e9ce9203e9c47d03e9c46b03e9ca000"
+        },
+        {
           "name": "glideStatus",
           "value": "false"
+        },
+        {
+          "name": "EC_NOTIF_COUNT_MAP",
+          "value": "{\"total\":0,\"Chat\":0,\"Cases\":0,\"Walk-up\":0,\"Technician Visit\":0}"
         }
       ]
     }
