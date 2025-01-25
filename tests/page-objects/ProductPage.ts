@@ -3,15 +3,15 @@ import { LocaleTestData } from "../config/locales";
 import BasePage from "./BasePage";
 
 export default class ProductPage extends BasePage {
-  readonly page: Page;
-  readonly locale: string;
   readonly addToCartBtn: Locator;
   readonly productName: Locator;
 
-  constructor(page: Page, locale: string, testData: LocaleTestData) {
+  constructor(
+    page: Page,
+    locale: keyof LocaleTestData,
+    testData: LocaleTestData
+  ) {
     super(page, locale, testData);
-    this.page = page;
-    this.locale = locale;
     this.addToCartBtn = this.page.getByTestId("pdpAddToProduct");
     this.productName = page.getByTestId("product-details").locator("h1");
   }

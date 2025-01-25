@@ -6,7 +6,7 @@ export default class BasePage {
   readonly url: string;
   readonly testData: LocaleTestData;
 
-  constructor(page: Page, locale: string, testData: LocaleTestData) {
+  constructor(page: Page, locale: keyof LocaleTestData, testData: LocaleTestData) {
     this.page = page;
     this.testData = testData;
     this.url = testData[locale].baseURL || testData["en"].baseURL;

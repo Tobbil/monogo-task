@@ -3,18 +3,17 @@ import { LocaleTestData } from "../config/locales";
 import BasePage from "./BasePage";
 
 export default class MainPage extends BasePage {
-  readonly page: Page;
-  readonly locale: string;
   readonly shopBtn: Locator;
   readonly acceptCookiesBtn: Locator;
   readonly confirmAgeBtn: Locator;
-  readonly addToCartBtn: Locator;
   readonly cartIcon: Locator;
 
-  constructor(page: Page, locale: string, testData: LocaleTestData) {
+  constructor(
+    page: Page,
+    locale: keyof LocaleTestData,
+    testData: LocaleTestData
+  ) {
     super(page, locale, testData);
-    this.page = page;
-    this.locale = locale;
     this.shopBtn = this.page.getByTestId(
       this.testData[locale].locators.testid.shopBtn
     );
