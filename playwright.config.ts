@@ -1,10 +1,7 @@
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig } from "@playwright/test";
 import * as dotenv from "dotenv";
 
 dotenv.config();
-
-// const baseURL = "https://www.ploom.co.uk/en";
-// const baseURL = "https://www.ploom.pl/pl";
 
 /**
  * Read environment variables from file.
@@ -28,9 +25,10 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: [["line"], ["html", { open: "never" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    headless: true,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: baseURL,
 
@@ -43,71 +41,56 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: "chromium",
-    //   use: { ...devices["Desktop Chrome"] },
-    // },
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
-
-    /* Test against specific locales */
+    { name: "setup", testDir: "setup" },
     {
-      name: "en-chrome",
+      name: "chromium",
+      dependencies: ["setup"],
       use: {
         browserName: "chromium",
-        baseURL: "https://www.ploom.co.uk/en",
       },
     },
     {
-      name: "en-firefox",
+      name: "firefox",
+      dependencies: ["setup"],
       use: {
         browserName: "firefox",
-        baseURL: "https://www.ploom.co.uk/en",
-      },
-    },
-    {
-      name: "pl-chrome",
-      use: {
-        browserName: "chromium",
-        baseURL: "https://www.ploom.pl/pl",
-      },
-    },
-    {
-      name: "pl-firefox",
-      use: {
-        browserName: "firefox",
-        baseURL: "https://www.ploom.pl/pl",
       },
     },
   ],
+  // {
+  //   name: "chromium",
+  //   use: { ...devices["Desktop Chrome"] },
+  // },
+
+  // {
+  //   name: 'firefox',
+  //   use: { ...devices['Desktop Firefox'] },
+  // },
+
+  // {
+  //   name: 'webkit',
+  //   use: { ...devices['Desktop Safari'] },
+  // },
+
+  /* Test against mobile viewports. */
+  // {
+  //   name: 'Mobile Chrome',
+  //   use: { ...devices['Pixel 5'] },
+  // },
+  // {
+  //   name: 'Mobile Safari',
+  //   use: { ...devices['iPhone 12'] },
+  // },
+
+  /* Test against branded browsers. */
+  // {
+  //   name: 'Microsoft Edge',
+  //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+  // },
+  // {
+  //   name: 'Google Chrome',
+  //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+  // },
 
   /* Run your local dev server before starting the tests */
   // webServer: {

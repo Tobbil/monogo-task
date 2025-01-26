@@ -1,0 +1,185 @@
+{
+	"cookies": [
+		{
+			"name": "_GRECAPTCHA",
+			"value": "09AGVEItdd04bNprbUpYtQIDlXahcOzu16KXz5-fnKE0f2b_e075Lt4wdO6p2HJK1T6Fufeao-y39ndm4Zn8VEuIw",
+			"domain": "www.google.com",
+			"path": "/recaptcha",
+			"expires": 1753388019.444028,
+			"httpOnly": true,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "demdex",
+			"value": "23066933876400492653019548762084522856",
+			"domain": ".demdex.net",
+			"path": "/",
+			"expires": 1753388017.496739,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "kndctr_6F68219F5D6E70510A495E5D_AdobeOrg_identity",
+			"value": "CiYyOTQ3MDY1NjgzNzgyMDkzMTQ1MjM3ODYxMTI0ODI5ODI2MTU2OFITCMru5PjJMhABGAEqBElSTDEwAPAByu7k-Mky",
+			"domain": ".ploom.co.uk",
+			"path": "/",
+			"expires": 1771964017,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "kndctr_6F68219F5D6E70510A495E5D_AdobeOrg_cluster",
+			"value": "irl1",
+			"domain": ".ploom.co.uk",
+			"path": "/",
+			"expires": 1737837817,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "AMCV_6F68219F5D6E70510A495E5D%40AdobeOrg",
+			"value": "MCMID|29470656837820931452378611248298261568",
+			"domain": ".ploom.co.uk",
+			"path": "/",
+			"expires": 1771532017,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "BIGipServerpool_jtigcc",
+			"value": "6d8a25bd761e6cd6532193bb9304df7c",
+			"domain": "gcc.ploom.co.uk",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": true,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "BIGipServerpool_jtigcc",
+			"value": "4545c7943b9194db9f3d34bc0789f78a",
+			"domain": "jtigcc.service-now.com",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": true,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "JSESSIONID",
+			"value": "7E963B1E799EA2047081174AD235181B",
+			"domain": "gcc.ploom.co.uk",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": true,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "glide_user_route",
+			"value": "glide.087c2b3a89d21d1c35d606241417e0b2",
+			"domain": "gcc.ploom.co.uk",
+			"path": "/",
+			"expires": 1772396018.631758,
+			"httpOnly": true,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "glide_node_id_for_js",
+			"value": "932ebee2945e7e74a50fa93bc31c6e1dc532a760494058a4e6c08dd9c716ce3e",
+			"domain": "gcc.ploom.co.uk",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "glide_language",
+			"value": "en",
+			"domain": "gcc.ploom.co.uk",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": true,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "__td_signed",
+			"value": "true",
+			"domain": ".ploom.co.uk",
+			"path": "/",
+			"expires": 1772396019.040974,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "_td",
+			"value": "8517bcc8-0981-4f1d-979b-554135060054",
+			"domain": ".ploom.co.uk",
+			"path": "/",
+			"expires": 1772396019.04152,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "OptanonAlertBoxClosed",
+			"value": "2025-01-25T20:13:40.387Z",
+			"domain": ".www.ploom.co.uk",
+			"path": "/",
+			"expires": 1769372020,
+			"httpOnly": false,
+			"secure": false,
+			"sameSite": "Lax"
+		},
+		{
+			"name": "OptanonConsent",
+			"value": "isGpcEnabled=0&datestamp=Sat+Jan+25+2025+21%3A13%3A40+GMT%2B0100+(Central+European+Standard+Time)&version=202209.2.0&isIABGlobal=false&hosts=&consentId=6ca15fa4-71bf-4ab4-b879-fa2fb2b0b9a0&interactionCount=1&landingPath=NotLandingPage&groups=C0002%3A1%2CC0004%3A1%2CC0005%3A1%2CC0003%3A1%2CC0001%3A1",
+			"domain": ".www.ploom.co.uk",
+			"path": "/",
+			"expires": 1769372020,
+			"httpOnly": false,
+			"secure": false,
+			"sameSite": "Lax"
+		},
+		{
+			"name": "C",
+			"value": "1",
+			"domain": ".adform.net",
+			"path": "/",
+			"expires": 1740514420.798629,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "uid",
+			"value": "1755388036520682037",
+			"domain": ".adform.net",
+			"path": "/",
+			"expires": 1743020020.838582,
+			"httpOnly": false,
+			"secure": true,
+			"sameSite": "None"
+		},
+		{
+			"name": "isAgeConfirmed",
+			"value": "true",
+			"domain": "www.ploom.co.uk",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": false,
+			"secure": false,
+			"sameSite": "Lax"
+		}
+	],
+	"origins": []
+}
