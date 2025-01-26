@@ -27,6 +27,12 @@ To set up and run this project locally, follow these steps:
    Available locales are defined in `tests/config/localeConfig.ts`
    
 5. **Run tests**:
+
+   For specific browser, for example Chromium:
+   ```bash
+   npx playwright test --project=chromium
+   ```
+   Run all tests:
    ```bash
    npx playwright test
    ```
