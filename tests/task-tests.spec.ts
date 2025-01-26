@@ -19,7 +19,8 @@ for (const locale of locales) {
       const cart = new Cart(page);
 
       await mainPage.clickMenuItem(localeStrings.shop);
-      await page.mouse.move(0, 0);
+      await page.mouse.move(0, 0, { steps: 50 });
+      await expect(mainPage.getItemBySKU(page, data.itemSKU)).toBeVisible();
       await mainPage.getItemBySKU(page, data.itemSKU).click();
       await productPage.addToCartBtn.click();
       await expect(cart.cartIconCounter).toHaveText("1");
@@ -34,7 +35,8 @@ for (const locale of locales) {
       const cart = new Cart(page);
       // It would be better to create a universal cart with one item via API
       await mainPage.clickMenuItem(localeStrings.shop);
-      await page.mouse.move(0, 0);
+      await page.mouse.move(0, 0, { steps: 50 });
+      await expect(mainPage.getItemBySKU(page, data.itemSKU)).toBeVisible();
       await mainPage.getItemBySKU(page, data.itemSKU).click();
       await productPage.addToCartBtn.click();
       await expect(cart.cartIconCounter).toHaveText("1");
@@ -50,7 +52,6 @@ for (const locale of locales) {
       mainPage,
       request,
     }) => {
-      test.setTimeout(45000);
       const page = mainPage.page;
 
       const linkErrors: string[] = [];
@@ -81,10 +82,7 @@ for (const locale of locales) {
           try {
             const response = await request.get(link);
             if (response.status() >= 400) {
-              console.log(`Broken link: ${link}`);
               linkErrors.push(link);
-            } else {
-              console.log(`Link OK: ${link}`);
             }
           } catch (error) {
             console.error(`Error checking link: ${link}`, error);
@@ -97,18 +95,12 @@ for (const locale of locales) {
         images.map(async (image) => {
           try {
             if (!image.complete || image.naturalWidth === 0) {
-              console.log(`Image BROKEN: ${image.src}`);
               incompleteImages.push(image.src);
-            } else {
-              console.log(`Image OK: ${image.src}`);
             }
 
             const response = await request.get(image.src);
             if (response.status() >= 400) {
-              console.log(`Image link BROKEN: ${image.src}`);
               linkErrors.push(image.src);
-            } else {
-              console.log(`Image link OK: ${image.src}`);
             }
           } catch (error) {
             console.error(`Error checking image: ${image.src}`, error);

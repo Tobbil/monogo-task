@@ -20,6 +20,7 @@ export default defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
+
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
@@ -47,6 +48,15 @@ export default defineConfig({
       dependencies: ["setup"],
       use: {
         browserName: "chromium",
+        trace: "on",
+      },
+    },
+    {
+      name: "webkit",
+      dependencies: ["setup"],
+      use: {
+        browserName: "webkit",
+        trace: "on",
       },
     },
     {
@@ -54,6 +64,7 @@ export default defineConfig({
       dependencies: ["setup"],
       use: {
         browserName: "firefox",
+        trace: "on",
       },
     },
   ],
