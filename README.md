@@ -14,6 +14,7 @@ To set up and run this project locally, follow these steps:
    npm install
    ```
 3. **Set up environment variable**:
+   
    Adjust environment variable `LOCALE` inside .env file to choose which locale(s) to run the tests for.
 
    Example:
