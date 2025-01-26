@@ -59,14 +59,6 @@ export default defineConfig({
         trace: "on",
       },
     },
-    {
-      name: "firefox",
-      dependencies: ["setup"],
-      use: {
-        browserName: "firefox",
-        trace: "on",
-      },
-    },
   ],
   // {
   //   name: "chromium",
