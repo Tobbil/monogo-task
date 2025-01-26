@@ -23,7 +23,10 @@ To set up and run this project locally, follow these steps:
    ```bash
    LOCALE=en,pl # Test English and Polish websites
    ```
-4. **Run tests**:
+
+   Available locales are defined in `tests/config/localeConfig.ts`
+   
+5. **Run tests**:
    ```bash
    npx playwright test
    ```
