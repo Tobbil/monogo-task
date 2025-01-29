@@ -1,14 +1,14 @@
-import { test, expect } from "./utils/fixtures";
-import ProductPage from "./page-objects/ProductPage";
-import Cart from "./page-objects/Cart";
-import { getConfigForLocale, getLocale } from "./config/localeConfig";
-import allTestData from "./task-tests-data";
+import { test, expect } from "../fixtures/fixtures";
+import ProductPage from "../page-objects/ProductPage";
+import Cart from "../page-objects/Cart";
+import { getConfigForLocale, getLocale } from "../config/localeConfig";
+import allTestData from "../test-data/example-tests-data";
 
 const locales = getLocale();
 
 for (const locale of locales) {
   const { localeStrings, data } = allTestData[locale];
-  test.describe("Ploom tests for Monogo", () => {
+  test.describe("Example Ploom website tests", () => {
     test.use(getConfigForLocale(locale));
 
     test(`[${locale}] Verify if it's possible to add a product to the cart`, async ({

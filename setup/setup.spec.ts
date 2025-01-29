@@ -1,7 +1,7 @@
 import { test as setup, chromium } from "@playwright/test";
-import MainPage from "../tests/page-objects/MainPage";
+import MainPage from "../page-objects/MainPage";
 import fs from "fs";
-import { getConfigForLocale, getLocale } from "../tests/config/localeConfig";
+import { getConfigForLocale, getLocale } from "../config/localeConfig";
 
 const locales = getLocale();
 
@@ -17,7 +17,7 @@ for (const locale of locales) {
       await mainPage.goto();
       await mainPage.acceptCookiesBtn.click();
       await mainPage.confirmAgeBtn.click();
-      const storageStatePath = `${__dirname}/../storageStates`;
+      const storageStatePath = "../storageStates";
       const storageState = await context.storageState();
       storageState.origins = [];
       if (!fs.existsSync(storageStatePath)) fs.mkdirSync(storageStatePath);
