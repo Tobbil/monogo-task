@@ -34,7 +34,7 @@ export default defineConfig({
     // baseURL: baseURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    // trace: "on-first-retry",
   },
   expect: {
     timeout: 10000, // Sets default assertion timeout to 10 seconds
@@ -48,7 +48,7 @@ export default defineConfig({
       dependencies: ["setup"],
       use: {
         browserName: "chromium",
-        trace: "on",
+        trace: "off",
       },
     },
     {
@@ -56,7 +56,7 @@ export default defineConfig({
       dependencies: ["setup"],
       use: {
         browserName: "webkit",
-        trace: "on",
+        trace: "off",
       },
     },
   ],

@@ -2,7 +2,6 @@ import { Page, Locator } from "@playwright/test";
 import BasePage from "./BasePage";
 
 export default class MainPage extends BasePage {
-  readonly shopBtn: Locator;
   readonly acceptCookiesBtn: Locator;
   readonly confirmAgeBtn: Locator;
   readonly cartIcon: Locator;
@@ -11,7 +10,9 @@ export default class MainPage extends BasePage {
   constructor(page: Page) {
     super(page);
     this.acceptCookiesBtn = this.page.locator("#onetrust-accept-btn-handler");
-    this.confirmAgeBtn = this.page.locator(".ageconfirmation__actionWrapper > div").first();
+    this.confirmAgeBtn = this.page
+      .locator(".ageconfirmation__actionWrapper > div")
+      .first();
     this.cartIcon = this.page.getByTestId("cart");
     this.menuItems = this.page.locator(".navigation__item");
   }
